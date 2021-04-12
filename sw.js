@@ -1,11 +1,9 @@
 self.addEventListener('install', function(event) {
     event.waitUntil(
-        caches.open('FILL_IN_CACHE_NAME_v1')
+        caches.open('minimal-pwa1-v1')
             .then(cache => cache.addAll([
                 'index.html',
-                'main.js',
-                'style.css',
-                'icon16.png',
+               
                 'icon192.png',
                 'icon196.png',
                 'icon512.png',
@@ -17,7 +15,7 @@ self.addEventListener('install', function(event) {
 self.addEventListener('fetch', function(event) {
     event.respondWith(
       caches
-        .open("FILL_IN_CACHE_NAME_v1")
+        .open("minimal-pwa1-v1")
         .then(function (cache) {
           return cache.match(event.request);
         })
